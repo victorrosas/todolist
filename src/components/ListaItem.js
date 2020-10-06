@@ -16,13 +16,14 @@ const ItemCheck = styled.View`
   height: 20px;
   border-radius: 10px;
   border: 5px solid #ccc;
+  background-color: ${props => (props.done ? 'green' : '#FFF')};
 `;
 export default props => {
   return (
-    <Item onPress={() => {}} activeOpacity={0.5}>
+    <Item onPress={props.onPress} activeOpacity={0.7}>
       <>
         <ItemText>{props.data.task}</ItemText>
-        <ItemCheck />
+        <ItemCheck done={props.data.done} />
       </>
     </Item>
   );
